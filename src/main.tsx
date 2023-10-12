@@ -8,17 +8,33 @@ import {
 import './index.css'
 import ErrorPage from "./Pages/error-page.tsx";
 import {CharityDetail} from "./Pages/charity-detail.tsx";
+import {SearchPage} from "./Pages/search-page.tsx";
+import {Favourite} from "./Pages/favourite.tsx";
 
 const router = createBrowserRouter([
     {
-        path: "/",
-        element: <App />,
-        errorElement: <ErrorPage />,
+        path: "/hi",
+        element: <div>Hii</div>
     },
     {
-        path: "charity/:id",
-        element: <CharityDetail />,
+        path: "/favourite",
+        element: <Favourite />,
     },
+    {
+        path: "/search/:cause",
+        element: <SearchPage />,
+    },
+    {
+        path: "/charity/:id",
+        element: <CharityDetail/>,
+    },
+    {
+        path: "/",
+        element: <App/>,
+        errorElement: <ErrorPage/>,
+    },
+
+
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
