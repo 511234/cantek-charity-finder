@@ -5,6 +5,9 @@ import {ICharityDetail} from "../types/charity.tsx";
 import {fetchCharity} from "../axios.ts";
 import {Toast} from "../Components/Toast.tsx";
 import {CoverImg} from "../Components/CoverImg.tsx";
+import FAV_REMOVE from '../imgs/fav-remove.png'
+import FAV_ADD from '../imgs/fav-add.png'
+import URL from '../imgs/url.png'
 
 export const CharityDetail = () => {
     const handleInLsCheck = () => {
@@ -48,13 +51,28 @@ export const CharityDetail = () => {
         <Navbar/>
         </CoverImg>
         {/*<div className=" flex flex-row gap-2" id="charity-wrapper">*/}
-            <div className="absolute bg-white opacity-75 rounded-lg p-4 w-2/5" id="charity-details" style={{top: '200px', right: '100px'}}>
+            <div className="absolute bg-white opacity-75 rounded-lg p-4 w-2/5 flex flex-col gap-3" id="charity-details" style={{top: '200px', right: '100px'}}>
                 <div className="flex flex-row items-center">
                 <img alt={charityDetail?.name} src={charityDetail?.logoUrl}/>
                 <span>{id}</span>
                 </div>
-                <span>{charityDetail?.location}</span>
-                <p className="mt-5">{charityDetail?.description}</p>
+                {charityDetail?.location && <span>{charityDetail.location}</span>}
+                {charityDetail?.description && <p className="mt-5">{charityDetail.description}</p>}
+                <div className="bg-white opacity-100 charity-action flex flex-row gap-4" >
+                    {isInLs ?
+                        <button type="button" onClick={handleRemoveFromFav}>
+                            <img alt="Remove from Favourite" className="w-10 h-10" src={FAV_REMOVE} />
+                        </button>
+                        :
+                        <button type="button" onClick={handleAddToFav}>
+                            <img alt="Add to Favourite" className="w-10 h-10" src={FAV_ADD} />
+                        </button>
+                    }
+                    <button type="button"><Link to={`${charityDetail?.profileUrl}`}>
+                        <img alt="Learn More" className="w-10 h-10" src={URL} />
+                    </Link>
+                    </button>
+                </div>
                 {Array.isArray(charityDetail?.tags) && charityDetail?.tags.length > 0 &&
                     <>
                         <div className="flex flex-row gap-2">
@@ -69,19 +87,9 @@ export const CharityDetail = () => {
                     </>
                 }
             </div>
-            <div className="charity-action flex flex-row mx-32 gap-4" >
-                {isSuccess && <Toast message={toastMessage}/>}
-                {isInLs ?
-                    <button type="button" className="rounded-lg bg-blue-400" onClick={handleRemoveFromFav}>Remove from
-                        Favourite
-                    </button>
-                    :
-                    <button type="button" className="rounded-lg bg-blue-400" onClick={handleAddToFav}>Add to Favourite
-                    </button>
-                }
-                <button type="button" className="rounded-lg bg-green-400"><Link to={`${charityDetail?.profileUrl}`}>Check
-                    it in every.org</Link></button>
-            </div>
+
+        {isSuccess && <Toast message={toastMessage}/>}
+
 
         {/*</div>*/}
 

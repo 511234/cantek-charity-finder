@@ -8,15 +8,15 @@ export interface IBrowseCharity {
 }
 
 export interface ICharityDetail {
-    coverImageUrl: string;
+    coverImageUrl?: string;
     description: string;
     ein: string;
-    location: string;
+    location?: string;
     logoCloudinaryId: string;
     logoUrl: string;
     matchedTerms: string[]
     name: string;
-    profileUrl: string;
+    profileUrl?: string;
     slug: string;
     tags: string[]
 }

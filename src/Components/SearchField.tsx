@@ -13,7 +13,7 @@ export const SearchField = ({children, searchValue, handleSearchValueChange}: IS
         <div className="relative text-xl font-extrabold ">
             <Link className="flex flex-row items-center" to="/">
                 <img className="w-10" src={logo} />
-                <span>Charity Finder</span>
+                <span className="tracking-wider">Charity Finder</span>
             </Link>
         </div>
         <div id="input-wrapper" className="relative">

@@ -24,7 +24,7 @@ export const Navbar = () => {
 
     return (
         <>
-            <nav className="bg-white bg-opacity-50 absolute font-extrabold text-teal-800 h-16 flex items-center justify-around flex-row space-around w-full">
+            <nav className="z-20 bg-white bg-opacity-50 absolute font-extrabold text-teal-800 h-16 flex items-center justify-around flex-row space-around w-full">
                 <SearchField searchValue={searchValue}
                              handleSearchValueChange={handleSearchValueChange}>
                 {searchValue &&
@@ -35,7 +35,7 @@ export const Navbar = () => {
                             key={option}
                             onClick={resetSearchValue}>
                             <Link to={`/search/${option}`}>{option}</Link></span>)}
-                        {optionList.length == 0 && <div className="font-extrabold text-xl text-teal-800 bg-white">Cause Not Found</div>}
+                        {optionList.length == 0 && <div className="font-extrabold text-xl text-teal-800">Cause Not Found</div>}
 
                     </div>}
                 </SearchField>
