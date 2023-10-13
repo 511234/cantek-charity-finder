@@ -21,13 +21,13 @@ function App() {
 
     return (
         <>
-            <div className={`bg-cover bg-center w-full h-160 transition-all duration-1000 ${shouldFadeIn ? 'opacity-100' : 'opacity-25'}`} style={{
+            <div className={`relative bg-cover bg-center w-full h-144 transition-all duration-1000 ${shouldFadeIn ? 'opacity-100' : 'opacity-25'}`} style={{
                 backgroundImage: `url('https://plus.unsplash.com/premium_photo-1681492071459-3a45f4289743?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2971&q=80')`
             }}>
                 <Navbar />
+            <div className="font-extrabold bg-white opacity-75 absolute text-4xl tracking-widest" style={{left: '30px', top: '500px'}}>Find a Charity That Interests You</div>
             </div>
-            <div>Find a charity you may be interested in...</div>
-            <div className="grid grid-cols-5 gap-3">
+            <div className="mt-6 px-5 grid grid-cols-5 gap-3">
                 {causeList.map((cause) =>
                     <CauseCard key={cause?.name} cause={cause}/>
                 )}

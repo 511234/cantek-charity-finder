@@ -17,7 +17,7 @@ export const SearchField = ({children, searchValue, handleSearchValueChange}: IS
             </Link>
         </div>
         <div id="input-wrapper" className="relative">
-            <input className="text-black" value={searchValue} onChange={handleSearchValueChange} type="text"
+            <input className="font-bold text-black w-64 rounded-md px-2" value={searchValue} onChange={handleSearchValueChange} type="text"
                    name="search" placeholder="Find a Charity ..."/>
         </div>
         <div className="text-xl font-extrabold text-teal-800"><Link to="/favourite">Favourite</Link></div>

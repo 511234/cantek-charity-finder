@@ -15,7 +15,7 @@ export const Favourite = () => {
 
         Favourite
         {favList.length == 0 ? <div>Your Favourite List is Empty.</div>:
-            <div className="grid grid-cols-5 gap-3">
+            <div className="grid grid-cols-5 px-5 gap-3">
                 {favList.map((charity) => <CharityCard key={charity.name} charity={charity}/>)}
             </div>
 
