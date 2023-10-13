@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {Link} from "react-router-dom";
+import logo from '../../public/logo.png'
 
 interface ISearchField {
     children: React.JSX.Element,
@@ -11,7 +12,7 @@ export const SearchField = ({children, searchValue, handleSearchValueChange}: IS
     return (<>
         <div className="relative text-xl font-extrabold ">
             <Link className="flex flex-row items-center" to="/">
-                <img className="w-10" src="../../public/logo.png" />
+                <img className="w-10" src={logo} />
                 <span>Charity Finder</span>
             </Link>
         </div>
