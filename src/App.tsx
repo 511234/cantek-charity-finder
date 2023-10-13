@@ -29,7 +29,7 @@ function App() {
             <div>Find a charity you may be interested in...</div>
             <div className="grid grid-cols-5 gap-3">
                 {causeList.map((cause) =>
-                    <CauseCard key={cause.name} cause={cause}/>
+                    <CauseCard key={cause?.name} cause={cause}/>
                 )}
             </div>
         </>
