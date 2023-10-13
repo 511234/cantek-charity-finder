@@ -1,7 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Comforter&family=Cookie&family=Mukta:wght@200&family=Tinos&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fleur+De+Leah&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
     background-color: #D1DEDE;
+    font-family: "Mukta"
 }

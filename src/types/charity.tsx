@@ -1,4 +1,5 @@
 export interface IBrowseCharity {
+    coverImageUrl: string;
     description: string;
     ein: string;
     name: string;

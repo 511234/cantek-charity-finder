@@ -1,34 +1,26 @@
-import { useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom'
 import {useEffect, useState} from "react";
 import {Navbar} from "../Components/Navbar.tsx";
 import {IBrowseCharity} from "../types/charity.tsx";
 import {browseCause} from "../axios.ts";
 import {CauseCard} from "../Components/CauseCard.tsx";
+import {CoverImg} from "../Components/CoverImg.tsx";
 
 
 export const SearchPage = () => {
     const {cause} = useParams()
     const [causeList, setCauseList] = useState<IBrowseCharity[]>([])
 
-    // const fetchCharity = async () => {
-    //     try {
-    //         const res = await axios.get<{
-    //             nonprofits: IBrowseCharity[]
-    //         }>(`https://partners.every.org/v0.2/browse/${cause}?apiKey=${import.meta.env.VITE_API_KEY}`)
-    //         console.log('res', res)
-    //         setCauseList(res.data.nonprofits)
-    //
-    //     } catch (e) {
-    //         console.log('e', e)
-    //     }
-    // }
-
     useEffect(() => {
         browseCause({cause, setCauseList})
     }, [cause])
 
+    console.log('causeList', causeList[0])
+
     return (<>
-            <Navbar/>
+            <CoverImg imgUrl={causeList?.[0]?.coverImageUrl ?? ''}>
+                <Navbar/>
+            </CoverImg>
             <h1>Search results for: {cause}</h1>
 
             <div className="grid grid-cols-5 gap-3">

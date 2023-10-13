@@ -46,9 +46,9 @@ export const CharityDetail = () => {
         <Navbar/>
         <div className="flex flex-row gap-2" id="charity-wrapper">
             <div className="charity-details">
-                <img src={charityDetail?.coverImageUrl}/>
+                <img alt={charityDetail.name} src={charityDetail?.coverImageUrl}/>
                 <div className="flex flex-row items-center">
-                <img src={charityDetail?.logoUrl}/>
+                <img alt={charityDetail.name} src={charityDetail?.logoUrl}/>
                 <span>{id}</span>
                 </div>
                 <span>{charityDetail?.location}</span>

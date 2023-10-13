@@ -1,10 +1,5 @@
 module.exports = {
-    future: {
-        // removeDeprecatedGapUtilities: true,
-        // purgeLayersByDefault: true,
-    },
-    purge: [],
-    theme: {
+     theme: {
         extend: {
             colors: {
                 wheat: '#EAD2AC',
@@ -18,6 +13,15 @@ module.exports = {
                 lightBlue: '#A5CCD1',
                 columbiaBlue: '#BCD4DE'
             },
+            fontFamily: {
+                fleur: ['Fleur De Leah'],
+                mukta: ['Mukta'],
+                tinos: ['Tinos'],
+            },
+            height: {
+                '128': '32rem',
+                '160': '40rem'
+            }
         },
 
     },
